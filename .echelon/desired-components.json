@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "project": "Iter",
+  "asOf": "2026-09-29",
+  "policy": "Use the most recent available Echelon component version or immutable main revision. Runtime dependencies are added only when Iter's architecture requires them.",
+  "components": [
+    {
+      "id": "praxis",
+      "version": "3.6.0",
+      "commit": "5550c41bf9edcf6761c1f7492448f3d4c060c1b1",
+      "role": "repository-governance",
+      "installNow": true
+    },
+    {
+      "id": "ordo",
+      "version": "1.4.0",
+      "commit": "452da8b4b6591583f742005a6ef7e72fb43fe87b",
+      "role": "engineering-method",
+      "installNow": true
+    },
+    {
+      "id": "visual-engineering",
+      "version": "1.0.0",
+      "commit": "bca8086bd99db9147a13db69b9d447d004e1bd9c",
+      "role": "future-site-ui-governance",
+      "installNow": true
+    },
+    {
+      "id": "communication-engineering",
+      "version": "1.0.0",
+      "commit": "4590d2fe6f7e80b339117d3fbee5803f2dd39122",
+      "role": "communication-governance",
+      "installNow": true
+    },
+    {
+      "id": "tutela",
+      "version": "0.1.0",
+      "commit": "a6708580a740327087dccf7b7091cd9a007077c8",
+      "role": "security-engineering",
+      "installNow": true
+    },
+    {
+      "id": "limen",
+      "version": "0.6.2",
+      "commit": "9a835cccaa57ef44899b27dba5d31a22bf23bb49",
+      "role": "future-site-browser-boundary",
+      "installNow": false,
+      "runtimeDependencyOfIterLibrary": false
+    },
+    {
+      "id": "forma",
+      "version": "0.3.0",
+      "commit": "9136e79e52b7199d3cc20fb69423e44778deb66e",
+      "role": "future-site-presentation",
+      "installNow": false,
+      "runtimeDependencyOfIterLibrary": false
+    },
+    {
+      "id": "folio",
+      "version": "0.3.0",
+      "commit": "8fd8516dddd599290ad302974210832086112e25",
+      "role": "future-print-only",
+      "installNow": false,
+      "runtimeDependencyOfIterLibrary": false
+    },
+    {
+      "id": "aegis",
+      "version": "1.0.0",
+      "commit": "2de171ac514aba51b66dbd7669e76bdbdc93395a",
+      "role": "future-effect-boundary-only",
+      "installNow": false,
+      "runtimeDependencyOfIterLibrary": false
+    },
+    {
+      "id": "dokimos",
+      "commit": "2887e2f76921933706c7941c0cbe75b85c8da0b7",
+      "role": "future-quality-dogfooding",
+      "installNow": false
+    },
+    {
+      "id": "conditor",
+      "version": "0.1.0",
+      "commit": "deef42827eb68ab554f05deab02974d27817cbea",
+      "role": "bootstrap-orchestration",
+      "installNow": false,
+      "note": "Current Conditor component catalog lags Praxis 3.6.0 and Ordo 1.4.0, so Iter bootstraps current lifecycle tools directly until Conditor qualifies them."
+    }
+  ]
+}
