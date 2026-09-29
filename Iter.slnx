@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Iter/Iter.fsproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Iter.Tests/Iter.Tests.fsproj" />
+  </Folder>
+</Solution>
