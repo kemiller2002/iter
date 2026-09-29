@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>EchelonFoundry.Iter</PackageId>
+    <Version>0.1.0</Version>
+    <Description>Small typed .NET application-side web primitives for routing and navigation above the Limen boundary.</Description>
+    <PackageTags>fsharp;routing;navigation;web;wasm;echelon-foundry</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Routing.fs" />
+  </ItemGroup>
+</Project>
