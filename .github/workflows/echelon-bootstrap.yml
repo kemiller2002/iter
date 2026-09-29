@@ -1,0 +1,45 @@
+name: Echelon Bootstrap
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.echelon/desired-components.json'
+      - 'scripts/bootstrap-echelons.sh'
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: "${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[echelon-bootstrap]') }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install and verify current Echelon governance
+        run: bash scripts/bootstrap-echelons.sh
+
+      - name: Commit managed installation state
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "Echelon state already current."
+            exit 0
+          fi
+          git config user.name "echelon-bootstrap"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: install current Echelon governance [echelon-bootstrap]"
+          git push
