@@ -27,6 +27,14 @@ Then read and obey any installed Ordo, Praxis, Visual Engineering, Communication
 - Do not add capability merely because React, Angular, Blazor, or another framework has it.
 - A capability belongs in Iter only when it is reusable application-side interpretation or coordination above the browser boundary.
 
+## CI observation discipline
+
+- Keep incremental commits and pushes at coherent recovery boundaries.
+- Do not wait for remote CI after every push; continue independent in-scope work while CI batches or runs.
+- Inspect remote CI at the final implementation boundary by default.
+- Inspect it earlier only when its result gates the next action, protects a high-risk boundary, or is required for merge/release/publication.
+- Never treat queued, cancelled, unavailable, or unobserved CI as passing.
+
 ## Repository behavior
 
 - Follow Ordo for state/engineering legality.
