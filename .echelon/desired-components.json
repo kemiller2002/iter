@@ -85,5 +85,6 @@
       "installNow": false,
       "note": "Current Conditor component catalog lags Praxis 3.6.0 and Ordo 1.4.0, so Iter bootstraps current lifecycle tools directly until Conditor qualifies them."
     }
-  ]
+  ],
+  "bootstrapRevision": 2
 }
