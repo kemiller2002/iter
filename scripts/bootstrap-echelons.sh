@@ -20,31 +20,48 @@ process.stdout.write(String(component[field]));
 PRAXIS_VERSION="$(component_field praxis version)"
 ORDO_VERSION="$(component_field ordo version)"
 VISUAL_VERSION="$(component_field visual-engineering version)"
-COMMUNICATION_VERSION="$(component_field communication-engineering version)"
+COMMUNICATION_COMMIT="$(component_field communication-engineering commit)"
 TUTELA_COMMIT="$(component_field tutela commit)"
 
-echo "Installing Praxis $PRAXIS_VERSION"
-npx --yes --package="@echelon-foundry/repository-operating-system@$PRAXIS_VERSION" ros init
+INSTALL_BASE="${ECHELON_HOME:-${RUNNER_TEMP:-$HOME/.echelon}/iter-echelons}"
+export ECHELON_HOME="$INSTALL_BASE"
+export PATH="$INSTALL_BASE/bin:$PATH"
 
-echo "Installing Ordo $ORDO_VERSION"
-npx --yes --package="@echelon-foundry/sde@$ORDO_VERSION" sde init
+TMP_ROOT="$(mktemp -d)"
+trap 'rm -rf "$TMP_ROOT"' EXIT
+
+echo "Installing native Praxis $PRAXIS_VERSION"
+curl -fsSL https://raw.githubusercontent.com/kemiller2002/praxis/main/scripts/install-native.sh -o "$TMP_ROOT/install-praxis.sh"
+sh "$TMP_ROOT/install-praxis.sh" --version "$PRAXIS_VERSION" --install-base "$INSTALL_BASE"
+
+echo "Installing native Ordo $ORDO_VERSION"
+curl -fsSL https://raw.githubusercontent.com/kemiller2002/ordo/main/scripts/install-native.sh -o "$TMP_ROOT/install-ordo.sh"
+sh "$TMP_ROOT/install-ordo.sh" --version "$ORDO_VERSION" --install-base "$INSTALL_BASE"
+
+echo "Installing Praxis repository governance"
+praxis init
+
+echo "Installing Ordo repository methodology"
+ordo init
 
 echo "Installing Visual Engineering $VISUAL_VERSION"
 npx --yes --package="@echelon-foundry/visual-engineering@$VISUAL_VERSION" visual-engineering init
 
-echo "Installing Communication Engineering $COMMUNICATION_VERSION"
-npx --yes --package="@echelon-foundry/communication-engineering@$COMMUNICATION_VERSION" communication-engineering init
+echo "Installing Communication Engineering at $COMMUNICATION_COMMIT"
+COMMUNICATION_DIR="$TMP_ROOT/communication-engineering"
+git clone --quiet https://github.com/kemiller2002/communication-engineering.git "$COMMUNICATION_DIR"
+git -C "$COMMUNICATION_DIR" checkout --quiet "$COMMUNICATION_COMMIT"
+node "$COMMUNICATION_DIR/bin/communication-engineering.mjs" init --root "$ROOT"
 
 echo "Installing Tutela at $TUTELA_COMMIT"
-TUTELA_DIR="$(mktemp -d)"
-trap 'rm -rf "$TUTELA_DIR"' EXIT
+TUTELA_DIR="$TMP_ROOT/tutela"
 git clone --quiet https://github.com/kemiller2002/tutela.git "$TUTELA_DIR"
 git -C "$TUTELA_DIR" checkout --quiet "$TUTELA_COMMIT"
 node "$TUTELA_DIR/bin/tutela.mjs" init --root "$ROOT"
 
 echo "Verifying installed lifecycle capabilities"
-npx --yes --package="@echelon-foundry/repository-operating-system@$PRAXIS_VERSION" ros verify --strict
-npx --yes --package="@echelon-foundry/sde@$ORDO_VERSION" sde verify --strict
+praxis verify --strict
+ordo verify --strict
 npx --yes --package="@echelon-foundry/visual-engineering@$VISUAL_VERSION" visual-engineering verify --strict
-npx --yes --package="@echelon-foundry/communication-engineering@$COMMUNICATION_VERSION" communication-engineering verify --strict
+node "$COMMUNICATION_DIR/bin/communication-engineering.mjs" verify --strict --root "$ROOT"
 node "$TUTELA_DIR/bin/tutela.mjs" verify --strict --root "$ROOT"
