@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore Iter.slnx
+
+      - name: Build
+        run: dotnet build Iter.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet run --project tests/Iter.Tests/Iter.Tests.fsproj --configuration Release --no-build
+
+      - name: Enforce minimality budget
+        run: bash scripts/measure-size.sh
+
+      - name: Pack
+        run: dotnet pack src/Iter/Iter.fsproj --configuration Release --no-build --output artifacts
+
+      - name: Inspect package
+        run: |
+          ls -lh artifacts
+          python3 - <<'PY'
+          import glob, os, zipfile
+          packages = glob.glob("artifacts/*.nupkg")
+          if len(packages) != 1:
+              raise SystemExit(f"expected exactly one package, found {len(packages)}")
+          package = packages[0]
+          print(f"NuGet package bytes: {os.path.getsize(package)}")
+          with zipfile.ZipFile(package) as z:
+              names = sorted(z.namelist())
+              for name in names:
+                  print(name)
+              forbidden = [n for n in names if n.startswith(("site/", "tests/", ".echelon/", ".ros/", ".sde/"))]
+              if forbidden:
+                  raise SystemExit(f"forbidden package content: {forbidden}")
+          PY
