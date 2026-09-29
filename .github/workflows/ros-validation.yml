@@ -1,4 +1,4 @@
-name: ROS validation
+name: Praxis validation
 
 on:
   pull_request:
@@ -14,10 +14,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: ./ros registry check
-      - run: ./ros validate
+
+      - name: Install pinned native Praxis
+        run: |
+          PRAXIS_VERSION="$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync(".echelon/toolchain.json","utf8")); process.stdout.write(x.praxis)')"
+          curl -fsSL https://raw.githubusercontent.com/kemiller2002/praxis/main/scripts/install-native.sh -o "$RUNNER_TEMP/install-praxis.sh"
+          sh "$RUNNER_TEMP/install-praxis.sh" --version "$PRAXIS_VERSION" --install-base "$RUNNER_TEMP/echelon"
+          echo "$RUNNER_TEMP/echelon/bin" >> "$GITHUB_PATH"
+
+      - name: Verify Praxis installation
+        run: praxis verify --strict
+
+      - name: Check registries
+        run: praxis registry check
+
+      - name: Validate repository
+        run: praxis validate
         env:
           ROS_BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
