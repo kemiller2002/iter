@@ -24,7 +24,7 @@ jobs:
         run: dotnet build Iter.slnx --configuration Release --no-restore
 
       - name: Test
-        run: dotnet run --project tests/Iter.Tests/Iter.Tests.fsproj --configuration Release --no-build
+        run: bash scripts/run-tests.sh
 
       - name: Enforce minimality budget
         run: bash scripts/measure-size.sh

@@ -2,5 +2,29 @@
   "schemaVersion": "1.0.0",
   "repository": "iter",
   "nextSeq": 1,
-  "items": []
+  "items": [
+    {
+      "id": "ITER-QUAL-001",
+      "title": "Test-execution integrity: dotnet test must execute the runner and fail on zero tests (ITR-F2)",
+      "description": "dotnet test reported success while executing zero tests; make the dependency-free runner the dotnet test target and reject empty runs.",
+      "tags": [
+        "quality"
+      ],
+      "priority": "high",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-05T09:20:05.000Z",
+      "updatedAt": "2026-10-05T09:20:16.000Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "claude-code",
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "runtime": "unknown"
+      },
+      "source": "echelon-quality-remediation",
+      "sourceReference": null
+    }
+  ]
 }
