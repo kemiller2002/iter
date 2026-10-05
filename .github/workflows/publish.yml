@@ -23,7 +23,7 @@ jobs:
         run: |
           dotnet restore Iter.slnx
           dotnet build Iter.slnx --configuration Release --no-restore
-          dotnet run --project tests/Iter.Tests/Iter.Tests.fsproj --configuration Release --no-build
+          bash scripts/run-tests.sh
           bash scripts/measure-size.sh
 
       - name: Pack

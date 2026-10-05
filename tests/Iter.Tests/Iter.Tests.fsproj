@@ -1,4 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- Dependency-free executable test runner (R0.2, R8.2, R12.11). It is not a
+       VSTest project, so `dotnet test` would otherwise succeed while executing
+       nothing (ITR-F2). The RunIterTests target below makes `dotnet test`
+       execute the runner and propagate its exit code; scripts/run-tests.sh
+       additionally rejects any run that reports zero executed tests. -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
@@ -7,6 +12,14 @@
     <ProjectReference Include="../../src/Iter/Iter.fsproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestFramework.fs" />
+    <Compile Include="RoutingTests.fs" />
+    <Compile Include="TestFrameworkTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+  <Target Name="RunIterTests" AfterTargets="VSTest">
+    <CallTarget Targets="Build" Condition="'$(VSTestNoBuild)' != 'true'" />
+    <Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(TargetPath)&quot;" Condition="'$(DOTNET_HOST_PATH)' != ''" />
+    <Exec Command="dotnet &quot;$(TargetPath)&quot;" Condition="'$(DOTNET_HOST_PATH)' == ''" />
+  </Target>
 </Project>

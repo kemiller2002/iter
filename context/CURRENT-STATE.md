@@ -11,6 +11,7 @@ Date: 2026-09-29
 - Typed routing is the first vertical slice.
 - The first pure route codec and typed navigation intent compile and pass the repository test executable.
 - NuGet packaging is configured as `EchelonFoundry.Iter` version `0.1.0`.
+- Tests run through `bash scripts/run-tests.sh`, which invokes `dotnet test Iter.slnx`. The dependency-free runner in `tests/Iter.Tests` is hooked into `dotnet test`, and the gate fails if zero tests execute or any test fails (ITR-F2).
 - CI builds, tests, enforces the initial 1,000 production-line budget, and inspects package contents.
 - A release workflow is present for NuGet publishing.
 - Future public site requirements and GitHub Pages deployment expectations are documented.
