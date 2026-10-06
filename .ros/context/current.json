@@ -2,9 +2,9 @@
   "schemaVersion": "1.0.0",
   "protocolVersion": "1.0.0",
   "repository": "iter",
-  "actor": "ros-bootstrap",
+  "actor": "anthropic/claude-code",
   "startedAt": "2026-09-29T16:02:33.708Z",
-  "updatedAt": "2026-10-05T09:20:16.000Z",
+  "updatedAt": "2026-10-06T12:21:34.000Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -41,6 +41,55 @@
         "EXE-20261005T092016391Z-76236d1c"
       ],
       "completedAt": "2026-10-05T09:20:16.000Z"
+    },
+    {
+      "id": "WI-0001",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".echelon/ros.json"
+        },
+        {
+          "type": "implementation",
+          "path": ".echelon/toolchain.json"
+        },
+        {
+          "type": "documentation",
+          "path": "AGENTS.md"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/praxis-validation.yml"
+        }
+      ],
+      "updatedAt": "2026-10-06T12:21:34.000Z",
+      "telemetryExecutionIds": [
+        "EXE-20261006T122030239Z-ab509961"
+      ],
+      "latestCheckpoint": {
+        "id": "2699e1ca390c54b1b3171921",
+        "recordedAt": "2026-10-06T12:21:33.000Z",
+        "executionId": "EXE-20261006T122030239Z-ab509961",
+        "repository": "iter",
+        "branch": "chore/praxis-3.7.1",
+        "commit": "c8dc7ee6bf60e69f787b4f46a44cde5944063702",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/iter"
+        },
+        "remoteBranch": "chore/praxis-3.7.1",
+        "remoteCommit": "c8dc7ee6bf60e69f787b4f46a44cde5944063702",
+        "summary": "Praxis 3.7.1 upgrade applied, Praxis contract 1.11.0 adopted with Iter guidance kept, verified and pushed",
+        "nextAction": "Complete WI-0001 and open the PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-10-06T12:21:34.000Z"
     }
   ]
 }
