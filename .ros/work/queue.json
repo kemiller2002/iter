@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "iter",
-  "nextSeq": 4,
+  "nextSeq": 5,
   "items": [
     {
       "id": "ITER-QUAL-001",
@@ -95,6 +95,27 @@
         "id": "anthropic/claude-code",
         "provider": "anthropic",
         "model": "claude-opus-5-5",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0004",
+      "title": "Move iter to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-10-08T07:15:52.182Z",
+      "updatedAt": "2026-10-08T07:16:15.505Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
         "runtime": "claude-code"
       },
       "source": "manual",
