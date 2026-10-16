@@ -56,3 +56,9 @@ See `PROJECT-CHARTER.md`, `requirements/REQUIREMENTS.md`, and `docs/architecture
 ## Website
 
 Iter will eventually have a public Echelon Foundry site. Website implementation is intentionally deferred until the library's routing surface is stable. Site work will use the Echelon browser/design stack rather than adding web concerns to the Iter library.
+
+## License
+
+Source available under PolyForm Noncommercial 1.0.0 for permitted noncommercial uses. Commercial use requires a separate license from Echelon Foundry. Previously distributed versions remain subject to the licenses under which they were released.
+
+Commercial licensing information is forthcoming.

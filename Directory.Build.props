@@ -10,7 +10,7 @@
     <Company>Echelon Foundry</Company>
     <RepositoryUrl>https://github.com/kemiller2002/iter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>PolyForm-Noncommercial-1.0.0</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 </Project>

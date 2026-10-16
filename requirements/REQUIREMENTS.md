@@ -170,7 +170,7 @@ R9.2 The initial package identity SHALL be `EchelonFoundry.Iter`.
 
 R9.3 Release publication SHALL occur through GitHub Actions rather than requiring a developer workstation.
 
-R9.4 Package metadata SHALL identify the source repository and MIT license.
+R9.4 Package metadata SHALL identify the source repository and PolyForm-Noncommercial-1.0.0 license.
 
 R9.5 The NuGet package SHALL contain only production library artifacts and required package metadata.
 
