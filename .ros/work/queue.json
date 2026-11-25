@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "iter",
-  "nextSeq": 6,
+  "nextSeq": 7,
   "items": [
     {
       "id": "ITER-QUAL-001",
@@ -131,6 +131,27 @@
       "attachments": [],
       "createdAt": "2026-11-25T18:12:03.934Z",
       "updatedAt": "2026-11-25T18:13:12Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0006",
+      "title": "Update desired-components.json to echelon-current 1.42.0 versions",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-25T20:42:47.117Z",
+      "updatedAt": "2026-11-25T20:44:11Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

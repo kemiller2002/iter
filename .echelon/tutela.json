@@ -21,7 +21,7 @@
     {
       "path": ".tutela/schemas/exception.schema.json",
       "ownership": "tool-owned",
-      "sha256": "9b2d1f2db4a78bb2677e222b17c9618f5d03bda30289d7e9ed2f4457f0870790"
+      "sha256": "de3c204549d1380424e836e8e4b9fb546f2e4b4f843e130a3f4705367d0bd019"
     },
     {
       "path": ".tutela/schemas/security-assessment.schema.json",

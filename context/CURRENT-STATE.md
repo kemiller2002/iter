@@ -21,13 +21,13 @@ Date: 2026-09-29
 
 Installed and verified through each owning lifecycle tool:
 
-- Praxis / Repository Operating System: 3.6.0
-- Ordo / State-Directed Engineering: 1.4.0
-- Visual Engineering: 1.0.0
+- Praxis / Repository Operating System: 3.25.0
+- Ordo / State-Directed Engineering: 1.20.0
+- Visual Engineering: 1.0.1
 - Communication Engineering: 1.0.0
 - Tutela: 0.1.0
 
-The desired baseline is recorded in `.echelon/desired-components.json`, and the native engineering toolchain is pinned in `.echelon/toolchain.json`.
+These are the echelon-current 1.42.0 versions. The desired baseline is recorded in `.echelon/desired-components.json`, and the native engineering toolchain is pinned in `.echelon/toolchain.json`.
 
 ## Recorded current Echelon application systems
 
