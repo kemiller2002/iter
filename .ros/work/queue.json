@@ -127,10 +127,10 @@
       "description": null,
       "tags": [],
       "priority": "medium",
-      "status": "ready",
+      "status": "complete",
       "attachments": [],
       "createdAt": "2026-11-25T18:12:03.934Z",
-      "updatedAt": "2026-11-25T18:12:04Z",
+      "updatedAt": "2026-11-25T18:13:12Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",
