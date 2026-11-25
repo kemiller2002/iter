@@ -8,3 +8,4 @@
 | WI-0002 | Move iter to Ordo 1.4.1 | complete | ordo, toolchain | medium |
 | WI-0003 | Move iter to Praxis 3.7.2, Ordo 1.4.2, Visual Engineering 1.0.1 and adopt Conditor | complete | praxis, ordo, toolchain | medium |
 | WI-0004 | Move iter to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current) | complete |  | medium |
+| WI-0005 | Upgrade to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0) | complete |  | medium |

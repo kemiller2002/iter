@@ -4,7 +4,7 @@
   "repository": "iter",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-09-29T16:02:33.708Z",
-  "updatedAt": "2026-10-08T07:16:15.505Z",
+  "updatedAt": "2026-11-25T18:13:12Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -234,6 +234,47 @@
       },
       "completedAt": "2026-10-08T07:16:15.505Z",
       "conclusion": "Ordo 1.5.0 through echelon-current 1.2.0; local checks passed (log: /tmp/claude-0/-home-user-praxis/7bcb3038-90cc-534e-8e5b-9be62aa1de8c/scratchpad/sweep/logs/iter.log)"
+    },
+    {
+      "id": "WI-0005",
+      "type": "task",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": ".conditor/lock.json"
+        },
+        {
+          "type": "tests",
+          "path": ".github/workflows/ci.yml"
+        }
+      ],
+      "updatedAt": "2026-11-25T18:13:12Z",
+      "telemetryExecutionIds": [
+        "EXE-20261125T181206618Z-b93b226f"
+      ],
+      "latestCheckpoint": {
+        "id": "e623d837698c535eedf75197",
+        "recordedAt": "2026-11-25T18:13:10Z",
+        "executionId": "EXE-20261125T181206618Z-b93b226f",
+        "repository": "iter",
+        "branch": "claude/vigila-implementation-jdeps1",
+        "commit": "c1f3815c9edc17ffdbe8a271f3090dfc5ffb6363",
+        "remote": {
+          "name": "origin",
+          "url": "https://github.com/kemiller2002/iter"
+        },
+        "remoteBranch": "claude/vigila-implementation-jdeps1",
+        "remoteCommit": "c1f3815c9edc17ffdbe8a271f3090dfc5ffb6363",
+        "summary": "Conditor upgraded to echelon-current 1.42.0 (praxis 3.25.0, ordo 1.20.0); build, 10 tests, size and pack pass; praxis validate passes",
+        "nextAction": "complete the work item and open a draft PR",
+        "verification": {
+          "status": "verified",
+          "mechanism": "git-remote-observation"
+        }
+      },
+      "completedAt": "2026-11-25T18:13:12Z"
     }
   ]
 }
