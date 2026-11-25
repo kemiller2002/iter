@@ -4,7 +4,7 @@
   "repository": "iter",
   "actor": "anthropic/claude-code",
   "startedAt": "2026-09-29T16:02:33.708Z",
-  "updatedAt": "2026-10-08T07:16:15.505Z",
+  "updatedAt": "2026-11-25T18:12:05Z",
   "baselineDirtyPaths": [],
   "workItems": [
     {
@@ -234,6 +234,17 @@
       },
       "completedAt": "2026-10-08T07:16:15.505Z",
       "conclusion": "Ordo 1.5.0 through echelon-current 1.2.0; local checks passed (log: /tmp/claude-0/-home-user-praxis/7bcb3038-90cc-534e-8e5b-9be62aa1de8c/scratchpad/sweep/logs/iter.log)"
+    },
+    {
+      "id": "WI-0005",
+      "type": "task",
+      "state": "active",
+      "semanticState": "active",
+      "evidence": [],
+      "updatedAt": "2026-11-25T18:12:05Z",
+      "telemetryExecutionIds": [
+        "EXE-20261125T181206618Z-b93b226f"
+      ]
     }
   ]
 }
