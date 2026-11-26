@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "repository": "iter",
-  "nextSeq": 7,
+  "nextSeq": 8,
   "items": [
     {
       "id": "ITER-QUAL-001",
@@ -152,6 +152,27 @@
       "attachments": [],
       "createdAt": "2026-11-25T20:42:47.117Z",
       "updatedAt": "2026-11-25T20:44:11Z",
+      "createdBy": "unknown",
+      "createdByActor": {
+        "kind": "agent",
+        "id": "anthropic/claude-code",
+        "provider": "anthropic",
+        "model": "unknown",
+        "runtime": "claude-code"
+      },
+      "source": "manual",
+      "sourceReference": null
+    },
+    {
+      "id": "WI-0007",
+      "title": "Upgrade to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0)",
+      "description": null,
+      "tags": [],
+      "priority": "medium",
+      "status": "complete",
+      "attachments": [],
+      "createdAt": "2026-11-26T00:29:44.765Z",
+      "updatedAt": "2026-11-26T00:31:02Z",
       "createdBy": "unknown",
       "createdByActor": {
         "kind": "agent",

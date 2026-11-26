@@ -10,3 +10,4 @@
 | WI-0004 | Move iter to Ordo 1.5.0 via echelon-current 1.2.0 (conditor upgrade --current) | complete |  | medium |
 | WI-0005 | Upgrade to echelon-current 1.42.0 (praxis 3.7.2->3.25.0, ordo 1.5.0->1.20.0) | complete |  | medium |
 | WI-0006 | Update desired-components.json to echelon-current 1.42.0 versions | complete |  | medium |
+| WI-0007 | Upgrade to echelon-current 1.43.0 (Praxis 3.25.0 -> 3.26.0) | complete |  | medium |
